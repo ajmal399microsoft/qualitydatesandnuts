@@ -10,7 +10,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: black;
-            color: rgb(200, 180, 80); /* Brighter text */
+            color: rgb(200, 180, 80);
         }
 
         .hero {
@@ -48,7 +48,7 @@
 
         .card {
             background-color: #222;
-            color: rgb(220, 200, 90); /* Brighter text */
+            color: rgb(220, 200, 90);
             text-align: center;
             width: 100%;
             height: 350px;
@@ -164,18 +164,25 @@
     <section id="contact" class="py-5">
         <div class="container">
             <h2 class="text-center">Contact Us</h2>
-            <form>
+
+            <!-- Success Message (Initially Hidden) -->
+            <div id="successMessage" class="alert alert-success text-center d-none" role="alert">
+                ✅ Your inquiry has been forwarded to our team. We will contact you soon!
+            </div>
+
+            <form id="contactForm">
                 <div class="mb-3">
                     <label class="form-label">Name</label>
-                    <input type="text" class="form-control" placeholder="Enter your name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" placeholder="Enter your email">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" pattern="[6-9]{1}[0-9]{9}" required>
+                    <small class="text-warning">Enter a valid 10-digit Indian mobile number.</small>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Message</label>
-                    <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
@@ -184,10 +191,47 @@
 
     <!-- Footer -->
     <footer class="footer text-center">
-        <img src="logo.png" alt="Quality Logo" height="50">
+        <img src="Images/Logo.png" alt="Quality Logo" height="50">
         <p>© 2025 Quality Dates & Nuts. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Show success message
+            let successMessage = document.getElementById("successMessage");
+            successMessage.classList.remove("d-none");
+
+            // Clear form fields
+            document.getElementById("contactForm").reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.add("d-none");
+            }, 5000);
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            let mobilePattern = /^[6-9]\d{9}$/;
+            // if (!mobilePattern.test(mobile)) {
+            //     alert("❌ Please enter a valid 10-digit Indian mobile number.");
+            //     return;
+            // }
+
+            let whatsappNumber = "9745123656"; 
+            let whatsappMessage = `Hello! My name is ${name}. My contact number is ${mobile}. Message: "${message}"`;
+            let encodedMessage = encodeURIComponent(whatsappMessage);
+
+            let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
 </body>
 </html>
