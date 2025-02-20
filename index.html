@@ -177,7 +177,7 @@
                 <div class="mb-3">
                     <label class="form-label">Mobile Number</label>
                     <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" pattern="[6-9]{1}[0-9]{9}" required>
-                    <small class="text-warning">Enter a valid 10-digit Indian mobile number.</small>
+                    <small class="text-warning">Enter a valid 10-digit mobile number.</small>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Message</label>
@@ -204,7 +204,7 @@
 
             let mobilePattern = /^[6-9]\d{9}$/;
             if (!mobilePattern.test(mobile)) {
-                alert("❌ Please enter a valid 10-digit Indian mobile number.");
+                alert("❌ Please enter a valid 10-digit mobile number.");
                 return;
             }
 
@@ -214,7 +214,7 @@
             document.getElementById("contactForm").reset();
             setTimeout(() => successMessage.classList.add("d-none"), 5000);
 
-            let whatsappNumber = "9846357146";
+            let whatsappNumber = "6282885541";
             let whatsappMessage = `Hello! My name is ${name}. My contact number is ${mobile}. Message: "${message}"`;
 
             window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
