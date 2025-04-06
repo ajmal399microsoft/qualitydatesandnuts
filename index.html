@@ -1,221 +1,981 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quality - Dates & Nuts</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="Images/Logo.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: rgb(200, 180, 80);
-        }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <!DOCTYPE html>
+    <html lang="en-US">
 
-        .hero {
-            position: relative;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            color: rgb(230, 210, 100);
-        }
+    <head>
+        <link rel="profile" href="https://gmpg.org/xfn/11" />
+        <title>Quality - Quality Snacks, Better Bites</title>
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('Images/Logo.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.4;
-            z-index: -1;
-        }
-
-        .navbar {
-            background-color: black !important;
-        }
-
-        .navbar-dark .navbar-nav .nav-link,
-        .navbar-dark .navbar-brand {
-            color: rgb(230, 210, 100) !important;
-        }
-
-        .card {
-            background-color: #222;
-            color: rgb(220, 200, 90);
-            text-align: center;
-            width: 100%;
-            height: 350px;
-        }
-
-        .card img {
-            max-height: 200px;
-            object-fit: cover;
-        }
-
-        .btn-primary {
-            background-color: rgb(200, 180, 80);
-            color: black;
-        }
-
-        .btn-primary:hover {
-            background-color: rgb(230, 210, 100);
-        }
-
-        .footer {
-            background: black;
-            color: rgb(230, 210, 100);
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .form-control {
-            background-color: black !important;
-            color: rgb(200, 180, 80) !important;
-            border: 1px solid rgb(230, 210, 100);
-        }
-
-        .form-control::placeholder {
-            color: rgb(230, 210, 100) !important;
-        }
-
-        .form-control:focus {
-            background-color: black;
-            color: rgb(200, 180, 80);
-            border-color: rgb(230, 210, 100);
-            box-shadow: 0 0 5px rgb(230, 210, 100);
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="Images/Logo.png" alt="Quality Logo" height="50"> 
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Welcome to Quality</h1>
-        <p>Premium Dates & Nuts for a Healthy Lifestyle</p>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="container py-5">
-        <h2 class="text-center">About Us</h2>
-        <p class="text-center">Quality provides the finest selection of dates and nuts, sourced from the best farms to ensure premium taste and nutrition.</p>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="container py-5">
-        <h2 class="text-center">Our Products</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="Images/Packets1.png" class="card-img-top" alt="Dates">
-                    <div class="card-body">
-                        <h5 class="card-title">Premium Dates</h5>
-                        <p class="card-text">Fresh and organic dates, rich in nutrients.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="Images/Packets2.png" class="card-img-top" alt="Almonds">
-                    <div class="card-body">
-                        <h5 class="card-title">Almonds</h5>
-                        <p class="card-text">Crunchy and delicious almonds, full of energy.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="Images/Packets3.png" class="card-img-top" alt="Walnuts">
-                    <div class="card-body">
-                        <h5 class="card-title">Walnuts</h5>
-                        <p class="card-text">High-quality walnuts, packed with omega-3.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Contact Us</h2>
-
-            <div id="successMessage" class="alert alert-success text-center d-none">
-                ✅ Your inquiry has been forwarded to our team. We will contact you soon!
-            </div>
-
-            <form id="contactForm">
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                </div>
-                <div class="mb-3">
-                    <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" pattern="[6-9]{1}[0-9]{9}" required>
-                    <small class="text-warning">Enter a valid 10-digit mobile number.</small>
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-        <img src="Images/Logo.png" alt="Quality Logo" height="50">
-        <p>© 2025 Quality Dates & Nuts. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let name = document.getElementById("name").value.trim();
-            let mobile = document.getElementById("mobile").value.trim();
-            let message = document.getElementById("message").value.trim();
-
-            let mobilePattern = /^[6-9]\d{9}$/;
-            if (!mobilePattern.test(mobile)) {
-                alert("❌ Please enter a valid 10-digit mobile number.");
-                return;
+        <meta name="description" content="Quality Snacks, Better Bites" />
+        <link rel="canonical" href="index.html" />
+        <link rel="next" href="page/2/index.html" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Quality" />
+        <meta property="og:description" content="Quality Snacks, Better Bites" />
+        <meta property="og:url" content="https://quality.com/" />
+        <meta property="og:site_name" content="Quality" />
+        <meta property="og:image" content="https://quality.com/wp-content/uploads/2024/06/Roasted-Salted-Cashews.png" />
+        <meta property="og:image:width" content="2722" />
+        <meta property="og:image:height" content="3308" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:card" content="summary_large_image" />
+       
+      
+        <style id='wp-emoji-styles-inline-css' type='text/css'>
+            img.wp-smiley,
+            img.emoji {
+                display: inline !important;
+                border: none !important;
+                box-shadow: none !important;
+                height: 1em !important;
+                width: 1em !important;
+                margin: 0 0.07em !important;
+                vertical-align: -0.1em !important;
+                background: none !important;
+                padding: 0 !important;
+            }
+        </style>
+        <link rel='stylesheet' id='wp-block-library-css'
+            href='wp-includes/css/dist/block-library/style.mind1c0.css?ver=6.7.2' type='text/css' media='all' />
+        <style id='classic-theme-styles-inline-css' type='text/css'>
+            /*! This file is auto-generated */
+            .wp-block-button__link {
+                color: #fff;
+                background-color: #32373c;
+                border-radius: 9999px;
+                box-shadow: none;
+                text-decoration: none;
+                padding: calc(.667em + 2px) calc(1.333em + 2px);
+                font-size: 1.125em
             }
 
-            let successMessage = document.getElementById("successMessage");
-            successMessage.classList.remove("d-none");
+            .wp-block-file__button {
+                background: #32373c;
+                color: #fff;
+                text-decoration: none
+            }
+        </style>
+       
+        
+        <link rel="icon" href="wp-content/uploads/2024/07/cropped-quality-black-32x32.png" sizes="32x32" />
+        <link rel="icon" href="wp-content/uploads/2024/07/cropped-quality-black-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="wp-content/uploads/2024/07/cropped-quality-black-180x180.png" />
+        <meta name="msapplication-TileImage"
+            content="https://quality.com/wp-content/uploads/2024/07/cropped-quality-black-270x270.png" />
+      
+		<style>
+		 :root {
+      --primary: #dbb77a;
+      --dark: #403b36;
+      --light: #fffff0;
+      --accent: #f5f0e1;
+      --font: 'Outfit', sans-serif;
+    }
 
-            document.getElementById("contactForm").reset();
-            setTimeout(() => successMessage.classList.add("d-none"), 5000);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            let whatsappNumber = "6282885541";
-            let whatsappMessage = `Hello! My name is ${name}. My contact number is ${mobile}. Message: "${message}"`;
+    body {
+      font-family: var(--font);
+      background-color: var(--light);
+      color: var(--dark);
+    }
 
-            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
-        });
-    </script>
+    header {
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d9d5c6;
+      flex-wrap: wrap;
+    }
+
+    .logo-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    header img {
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .social-icons a {
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--dark);
+    }
+
+    .cart-container {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: red;
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+
+    .buy-now-popup {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    .buy-now-popup button {
+      background: var(--primary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    .product {
+      position: relative;
+    }
+
+    .add-to-cart {
+      margin-top: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1604908811817-e1717c81e8d9?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-shadow: 1px 1px 6px #00000080;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .section {
+      padding: 5rem 2rem;
+      text-align: center;
+      background-color: var(--accent);
+    }
+
+    .section:nth-of-type(even) {
+      background-color: var(--light);
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+
+    .why-choose-us {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .reason {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .reason h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .product {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      width: 300px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .buy-now {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .buy-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .buy-links a img {
+      height: 50px;
+      transition: transform 0.3s;
+    }
+
+    .buy-links a img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer {
+      background: #1c1b1a;
+      color: var(--light);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      text-align: left;
+    }
+
+    .footer-column h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-column ul li a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-icons a {
+      color: var(--light);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+
+    .footer-logo {
+      margin-top: 2rem;
+    }
+
+    .footer-logo img {
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+		</style>
+    </head>
+
+<body class="home blog">
+    <div id="page">
+	<header>
+    <div class="logo-nav">
+      <img src="assets/logo.png" alt="Quality Logo">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="https://wa.me/916282885541">Contact</a>
+      </nav>
+    </div>
+       <div class="social-icons">
+      <a href="https://www.instagram.com/quality_datesandnuts?igsh=bDg5anc1N3h4Y3Vl" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/15yfcAxfHh/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/916282885541" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </header>
+
+        <div id="header" role="banner">
+            <div id="headerimg">
+                <h1><a href="index.html">Quality</a></h1>
+                <div class="description">Quality Snacks, Better Bites</div>
+            </div>
+        </div>
+        <hr />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link data-minify="1" rel="stylesheet"
+            href="wp-content/cache/min/1/wp-content/themes/quality/style3ca2.css?ver=1737611819" type="text/css"
+            media="all" />
+        <link data-minify="1" rel="stylesheet"
+            href="wp-content/cache/min/1/ajax/libs/Swiper/4.5.0/css/swiper.min3ca2.css?ver=1737611819"
+            type="text/css" />
+        <link data-minify="1" rel="stylesheet"
+            href="wp-content/cache/min/1/ajax/libs/animate.css/4.1.1/animate.min3ca2.css?ver=1737611819" />
+        <script data-minify="1"
+            src="wp-content/cache/min/1/ajax/libs/Swiper/4.5.0/js/swiper.min3ca2.js?ver=1737611819"></script>
+        </head>
+		
+
+        <body class="max-w-screen overflow-x-hidden">
+                <div class="bg-[#292516] py-3 text-[13px] font-medium text-white">
+                    <a href="#" class="container flex justify-center lg:justify-between">
+                        <span class="hidden lg:block">Buy Now @ Amazon</span>
+                        <span class="hidden lg:block">Buy Now @ Flipkart</span>
+                        <span>Buy Now @ Instagram</span>
+                    </a>
+                </div>
+            <div class="flex flex-col lg:flex-row bg-[#EE6B61] text-white h-screen items-center">
+                <div class="px-8 lg:px-20 lg:w-[50%] pt-24">
+                    <h1 class="paytone text-[60px] leading-[60px] xl:text-[90px] xl:leading-[90px] flex flex-col">
+                        <span
+                            class="text-[24px] leading-[24px] xl:text-[36px] xl:leading-[36px] animate__animated animate__fadeInDown">Quality Snacks </span>
+                        <span>BETTER BITES !!</span>
+                        <span></span>
+                    </h1>
+                    <p class="text-base font-normal mt-8">Healthier delicious snacks designed to feed your feel good</p>
+                    <div class="flex gap-4 lg:gap-8 justify-left mt-12">
+                        <div class="flex flex-col items-left justify-left text-left w-[80px] lg:w-[100px] ">
+                            <img src="wp-content/themes/quality/assets/images/nutritionally-balanced.svg"
+                                class="w-[36px] h-[36px] mb-1" />
+                            <h4 class="text-[14px] font-normal text-[#fff]">Nutritionally Balanced</h4>
+                        </div>
+                        <div class="flex flex-col items-left justify-left text-left w-[80px] lg:w-[100px]">
+                            <img src="wp-content/themes/quality/assets/images/gluten-free.svg"
+                                class="w-[36px] h-[36px] mb-1" />
+                            <h4 class="text-[14px] font-normal text-[#fff]">Gluten Free</h4>
+                        </div>
+                        <div class="flex flex-col items-left justify-left text-left w-[80px] lg:w-[100px]">
+                            <img src="wp-content/themes/quality/assets/images/no-added-preservatives.svg"
+                                class="w-[36px] h-[36px] mb-1" />
+                            <h4 class="text-[14px] font-normal text-[#fff]">No Added Preservatives</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-[60%] h-full relative group overflow-hidden">
+                    <img src="wp-content/themes/quality/assets/images/home/tail-1.svg"
+                        class="absolute h-[90%] bottom-[5%] right-0 rotate-0" />
+                    <img src="wp-content/themes/quality/assets/images/home/chilli.svg"
+                        class="absolute h-[35%] bottom-0 z-20 left-[0%] transition-all duration-500 group-hover:left-[5%]" />
+                    <img src="wp-content/themes/quality/assets/images/home/cashew.svg"
+                        class="absolute h-[10%] bottom-[40%] left-[10%] z-20 transition-all duration-700 group-hover:left-[15%] group-hover:bottom-[45%]" />
+                    <img src="wp-content/themes/quality/assets/images/home/vector_4.svg"
+                        class="absolute h-[40%] bottom-[55%] left-[20%] z-20 transition-all duration-700 group-hover:left-[25%] group-hover:bottom-[50%]" />
+                    <img src="wp-content/themes/quality/assets/images/home/vector_5.svg"
+                        class="h-[30%] absolute top-[5%] right-[10%] z-20 transition-all duration-700 group-hover:right-[15%] group-hover:bottom-[35%]" />
+                   
+					<img src="assets/products/Roasted_Salted_Almonds_front-removebg-preview.png" style="
+    right: 5.5rem; height:80%" class="absolute bottom-0  z-14 transition-all duration-700 group-hover:scale-105 object-cover" />
+					<img src="assets/products/Roasted Salted Cashew 1280 ST.png" style="
+    right: 4rem; height:75%"
+                        class="absolute bottom-0 z-10 transition-all duration-700 group-hover:scale-105 object-cover" />
+					<img src="assets/products/ALMOND DATES 1280 ST.png"
+                        class="absolute bottom-0 right-0 z-10 transition-all duration-700 group-hover:scale-105 object-cover h-[70%]" />
+                </div>
+            </div>
+            <div class="my-16 relative w-full overflow-x-hidden">
+                <h3 class="paytone text-[36px] leading-[50px] text-center mb-16">
+                    Explore Our Crunchy Goodness
+                </h3>
+                <div class="grid lg:grid-cols-3 gap-8 container ">
+                    <a href="#" class="flex flex-col items-center justify-center text-center">
+                        <img src="wp-content/themes/quality/assets/images/cashew.svg" class="w-[130px] h-[130px] mb-5" />
+                        <h4 class="text-[20px] font-medium">Cashews</h4>
+                        <p class="text-base">Quality’s cashew snacks – nutritious, delicious, and perfect for wholesome
+                            energy.</p>
+
+                    </a>
+                    <a href="#" class="flex flex-col items-center justify-center text-center">
+                        <img src="wp-content/themes/quality/assets/images/almonds.svg"
+                            class="w-[130px] h-[130px] mb-5" />
+                        <h4 class="text-[20px] font-medium">Almonds</h4>
+                        <p class="text-base">Indulge in Quality's healthy almond snacks – a crunchy, nutritious boost to
+                            fuel your day.</p>
+                    </a>
+                    <a href="#"
+                        class="flex flex-col items-center justify-center text-center">
+                        <img src="assets/products/almond-date.png" style="width:130px; height:130px"
+                            class="mb-5" />
+                        <h4 class="text-[20px] font-medium">Almond Dates</h4>
+                        <p class="text-base">Quality’s dates snacks – wholesome, delicious, and packed with natural
+                            goodness.</p>
+                    </a>
+                </div>
+                <img src="wp-content/themes/quality/assets/images/walnut-grey-1.svg"
+                    class="transition-all duration-700 absolute bottom-[30%] -z-10 left-[0%] h-[20%] lg:h-[40%]" />
+                <img src="wp-content/themes/quality/assets/images/cashew-grey.svg"
+                    class="transition-all duration-700 absolute top-[0%] -z-10 lg:-right-[1%] h-[15%] lg:h-[40%] rotate-270" />
+            </div>
+            <div class="marquee-wrapper page-width" style="padding:0">
+                <div class="">
+                    <div class="marquee-block">
+                        <div class="marquee-inner to-left">
+                            <span>
+                                <div class="marquee-content">
+                                    <p>irresistible crunch and delightful flavors</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>irresistible crunch and delightful flavors</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>irresistible crunch and delightful flavors</p>
+                                </div>
+                            </span>
+                            <span>
+                                <div class="marquee-content">
+
+                                    <p>irresistible crunch and delightful flavors</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>irresistible crunch and delightful flavors</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>irresistible crunch and delightful flavors</p>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row bg-[#41A972] text-white lg:h-[700px] py-16 lg:py-0 items-center">
+                <div class="px-8 lg:px-32 lg:w-[40%] flex flex-col justify-center">
+                    <div class="paytone text-white">
+                        <h4 class="text-[36px] leading-[55px]">The</h4>
+                        <h4 class="text-[36px] leading-[55px]">Quality</h4>						
+                        <h4 class="text-[36px] leading-[55px]">Advantage</h4>
+                        <p class="text-base leading-[24px] rubik mt-5">Elevate your snacking with Quality – where
+                            wholesome ingredients meet irresistible flavor. Discover the perfect balance of health and
+                            taste with every bite.</p>
+                    </div>
+                    <div class="flex flex-col lg:flex-row gap-4 justify-left mt-12">
+                        <div
+                            class="flex items-center lg:justify-between text-left bg-[#F8F2E4] rounded-lg p-4 min-w-[180px]">
+                            <img src="wp-content/themes/quality/assets/images/Plant%20Protein.svg"
+                                class="w-[30px] h-[30px] text-white" />
+                            <h4 class="text-[14px] font-normal text-[#272727] ml-4">Source of Plant Protein</h4>
+                        </div>
+
+                        <div class="flex items-center text-left bg-[#F8F2E4] rounded-lg p-4 min-w-[180px]">
+                            <img src="wp-content/themes/quality/assets/images/Direct%20to%20table.svg"
+                                class="w-[30px] h-[30px] mb-1" />
+                            <h4 class="text-[14px] font-normal text-[#272727] ml-4">Farm to Table</h4>
+                        </div>
+
+                        <div
+                            class="flex items-center lg:justify-between text-left bg-[#F8F2E4] rounded-lg p-4 min-w-[180px]">
+                            <img src="wp-content/themes/quality/assets/images/No%20cholestrol.svg"
+                                class="w-[30px] h-[30px] mb-1" />
+                            <h4 class="text-[14px] font-normal text-[#272727] ml-4">Zero Cholesterol</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[60%] h-full relative group overflow-hidden">
+                    <img src="assets/products/Roasted_Salted_Cashew_both_side-removebg-preview.png"
+                        class="absolute -bottom-[15%] z-10 transition-all duration-700 group-hover:scale-105 h-[120%] -rotate-[30deg] right-[5%]" />
+                </div>
+            </div>
+            <div class="my-16 border-b border-[#DFDFDF] container pb-5">
+                <h3 class="paytone text-[36px] leading-[50px] text-center mb-1">
+                    You will Definitely Love this!
+                </h3>
+                <p class="mb-5 text-center text-base">Quality snacks offer a perfect blend of health and flavor. Indulge
+                    in our nutritious, delicious treats for guilt-free enjoyment.</p>
+                <div class="flex gap-20 container justify-center">
+                    <div class="flex flex-col items-center justify-center text-center">
+                        <img src="wp-content/themes/quality/assets/images/nutritionally-balanced.svg"
+                            class="w-[60px] h-[60px] mb-1 flex-shrink-0" />
+                        <h4 class="text-[14px] font-normal text-[#A5A5A5]">Nutritionally Balanced</h4>
+                    </div>
+                    <div class="flex flex-col items-center justify-center text-center">
+                        <img src="wp-content/themes/quality/assets/images/gluten-free.svg"
+                            class="w-[60px] h-[60px] mb-1 flex-shrink-0" />
+                        <h4 class="text-[14px] font-normal text-[#A5A5A5]">Gluten Free</h4>
+                    </div>
+                    <div class="flex flex-col items-center justify-center text-center">
+                        <img src="wp-content/themes/quality/assets/images/no-added-preservatives.svg"
+                            class="w-[60px] h-[60px] mb-1 flex-shrink-0" />
+                        <h4 class="text-[14px] font-normal text-[#A5A5A5]">No Added Preservatives</h4>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container pb-16">
+                <div class="grid lg:grid-cols-4 gap-8">
+                    <div class="product relative">
+                        <div
+                            class="bg-[#F8F2E4] rounded-tl-full rounded-tr-full flex flex-col justify-center items-center pb-4 min-h-[320px] relative">
+                            <img src="assets/products/ALMOND DATES 1280 ST.png"
+                                class="w-[260px] h-[250px] mb-1 object-contain" />
+                            <div class="flex gap-5 items-center -mt-8 absolute bottom-4">
+                                <img src="wp-content/themes/quality/assets/images/nutritionally-balanced.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/gluten-free.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/no-added-preservatives.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                            </div>
+                            <img src="wp-content/themes/quality/assets/images/best-seller.svg"
+                                class="w-[70px] h-[70px] mb-1 absolute -top-2 right-14" />
+
+                        </div>
+                        <div class="my-4 ">
+                            <h3 class="text-base font-medium leading-[26px] capitalize">Roasted Almond Dates</h3>
+                            <p class="text-[14px] font-normal text-[#A5A5A5]">Perfect time-pass healthy snack</p>
+							<a href="javascript:void(0)" onclick="redirectToWhatsApp('Roasted Almond Dates')"
+							class="text-[14px] font-medium bg-[#292516] py-2 text-white text-center rounded-full block">
+							Buy Now
+							</a>
+                        </div>
+                    </div>
+                    <div class="product relative">
+                        <div
+                            class="bg-[#F8F2E4] rounded-tl-full rounded-tr-full flex flex-col justify-center items-center pb-4 min-h-[320px] relative">
+                            <img src="assets/products/Roasted Salted Cashew 1280 ST.png"
+                                class="w-[260px] h-[250px] mb-1 object-contain" />
+                            <div class="flex gap-5 items-center -mt-8 absolute bottom-4">
+                                <img src="wp-content/themes/quality/assets/images/nutritionally-balanced.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/gluten-free.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/no-added-preservatives.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                            </div>
+                            <img src="wp-content/themes/quality/assets/images/new.svg"
+                                class="w-[70px] h-[70px] mb-1 absolute -top-2 right-14" />
+
+                        </div>
+                        <div class="my-4 ">
+                            <h3 class="text-base font-medium leading-[26px] capitalize">Roasted Salted Cashews</h3>
+                            <p class="text-[14px] font-normal text-[#A5A5A5]">Crunchy Anytime Snack</p>
+                           	<a href="javascript:void(0)" onclick="redirectToWhatsApp('Roasted Salted Cashews')"
+								class="text-[14px] font-medium bg-[#292516] py-2 text-white text-center rounded-full block">
+								Buy Now
+							</a>
+
+                        </div>
+                    </div>
+                    <div class="product relative">
+                        <div
+                            class="bg-[#F8F2E4] rounded-tl-full rounded-tr-full flex flex-col justify-center items-center pb-4 min-h-[320px] relative">
+                            <img src="assets/products/Roasted Salted Almonds 1280 ST.png"
+                                class="w-[260px] h-[250px] mb-1 object-contain" />
+                            <div class="flex gap-5 items-center -mt-8 absolute bottom-4">
+                                <img src="wp-content/themes/quality/assets/images/nutritionally-balanced.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/gluten-free.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/no-added-preservatives.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                            </div>
+                            <img src="wp-content/themes/quality/assets/images/new.svg"
+                                class="w-[70px] h-[70px] mb-1 absolute -top-2 right-14" />
+
+                        </div>
+                        <div class="my-4 ">
+                            <h3 class="text-base font-medium leading-[26px] capitalize">Roasted Salted Almonds</h3>
+                            <p class="text-[14px] font-normal text-[#A5A5A5]">The All-time Classic Snack</p>
+                            <a href="javascript:void(0)" onclick="redirectToWhatsApp('Roasted Salted Almonds')"
+								class="text-[14px] font-medium bg-[#292516] py-2 text-white text-center rounded-full block">
+								Buy Now
+							</a>
+                        </div>
+                    </div>
+                    <div class="product relative">
+                        <div
+                            class="bg-[#F8F2E4] rounded-tl-full rounded-tr-full flex flex-col justify-center items-center pb-4 min-h-[320px] relative">
+                            <img src="assets/products/family-pack 1280-st.png"
+                                class="w-[260px] h-[250px] mb-1 object-contain" />
+                            <div class="flex gap-5 items-center -mt-8 absolute bottom-4">
+                                <img src="wp-content/themes/quality/assets/images/nutritionally-balanced.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/gluten-free.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                                <img src="wp-content/themes/quality/assets/images/no-added-preservatives.svg"
+                                    class="w-[20px] h-[20px] mb-1" />
+                            </div>
+                            <img src="wp-content/themes/quality/assets/images/best-seller.svg"
+                                class="w-[70px] h-[70px] mb-1 absolute -top-2 right-14" />
+
+                        </div>
+                        <div class="my-4 ">
+                            <h3 class="text-base font-medium leading-[26px] capitalize">Combo pack</h3>
+                            <p class="text-[14px] font-normal text-[#A5A5A5]">Tangy & Tasty, Your Anytime snack!</p>
+                            <a href="javascript:void(0)" onclick="redirectToWhatsApp('Combo pack')"
+								class="text-[14px] font-medium bg-[#292516] py-2 text-white text-center rounded-full block">
+								Buy Now
+							</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+<div class="bg-[#EE6B61] pt-12 pb-20 relative">
+  <img src="wp-content/themes/quality/assets/images/cashew-vector.svg"
+    class="w-[127px] h-[100px] mb-1 absolute top-10 left-12 opacity-25 rotate-[260deg]" />
+
+  <h3 class="paytone text-[36px] leading-[50px] text-center mb-1 text-white px-8 lg:px-0">
+    What Our Customers Say
+  </h3>
+  <p class="mb-12 text-center text-white px-8 lg:px-0">
+    Enjoyed by families and foodies alike for their flavourful punch and health-boosting goodness.
+  </p>
+
+  <div class="gap-4 swiper-container swiper--top hidden lg:flex">
+    <swiper-container class="swiper w-full pl-8" pagination="false" slides-per-view="4.5" space-between="30" autoplay="true">
+
+      <swiper-slide>
+        <div class="bg-[#F8F2E4] rounded-[5px] p-3 text-wrap">
+          <h5 class="text-[14px] font-normal leading-[24px]">
+            "The snacks from NutraDelights are my absolute favorite! Whether I'm chilling at home or need a pick-me-up post yoga, they're the perfect munchies."
+          </h5>
+          <h6 class="text-[16px] font-medium leading-[26px] mt-5">Aarav</h6>
+          <img src="wp-content/themes/quality/assets/images/stars.svg" class="w-[100px] h-[20px] mb-1" />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="bg-[#F8F2E4] rounded-[5px] p-3 text-wrap">
+          <h5 class="text-[14px] font-normal leading-[24px]">
+            "NutraDelights has such a wide mix—crispy almonds, sweet dates, and more! Every bite is a blast of taste and nutrition."
+          </h5>
+          <h6 class="text-[16px] font-medium leading-[26px] mt-5">Meera</h6>
+          <img src="wp-content/themes/quality/assets/images/stars.svg" class="w-[100px] h-[20px] mb-1" />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="bg-[#F8F2E4] rounded-[5px] p-3 text-wrap">
+          <h5 class="text-[14px] font-normal leading-[24px]">
+            "I always keep NutraDelights in my bag! They blend crunch with natural flavors so well—it’s like having a mini health boost every time."
+          </h5>
+          <h6 class="text-[16px] font-medium leading-[26px] mt-5">Karan</h6>
+          <img src="wp-content/themes/quality/assets/images/stars.svg" class="w-[100px] h-[20px] mb-1" />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="bg-[#F8F2E4] rounded-[5px] p-3 text-wrap">
+          <h5 class="text-[14px] font-normal leading-[24px]">
+            "These snacks are a lifesaver on busy days! Handy, healthy, and absolutely delicious—exactly what I need between meetings."
+          </h5>
+          <h6 class="text-[16px] font-medium leading-[26px] mt-5">Neha</h6>
+          <img src="wp-content/themes/quality/assets/images/stars.svg" class="w-[100px] h-[20px] mb-1" />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="bg-[#F8F2E4] rounded-[5px] p-3 text-wrap">
+          <h5 class="text-[14px] font-normal leading-[24px]">
+            "I've replaced my old snack habits with NutraDelights. They're not just tasty, they’re clean and trustworthy. Total win!"
+          </h5>
+          <h6 class="text-[16px] font-medium leading-[26px] mt-5">Rajesh</h6>
+          <img src="wp-content/themes/quality/assets/images/stars.svg" class="w-[100px] h-[20px] mb-1" />
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="bg-[#F8F2E4] rounded-[5px] p-3 text-wrap">
+          <h5 class="text-[14px] font-normal leading-[24px]">
+            "NutraDelights truly lives up to its name. Fresh, high-quality, and flavorful—these snacks are a must for every smart snacker."
+          </h5>
+          <h6 class="text-[16px] font-medium leading-[26px] mt-5">Sneha</h6>
+          <img src="wp-content/themes/quality/assets/images/stars.svg" class="w-[100px] h-[20px] mb-1" />
+        </div>
+      </swiper-slide>
+
+    </swiper-container>
+  </div>
+
+  <div class="flex gap-4 swiper-container swiper--top lg:hidden">
+    <swiper-container class="swiper w-full pl-8" pagination="false" slides-per-view="1.5" space-between="30" autoplay="true">
+    </swiper-container>
+  </div>
+
+  <img src="wp-content/themes/quality/assets/images/pistachio-vector.svg"
+    class="w-[157px] h-[160px] mb-1 absolute -top-16 right-12 opacity-25 rotate-[150deg]" />
+</div>
+
+            <div class="py-24 relative container">
+                <img src="wp-content/themes/quality/assets/images/cashew-vector.svg"
+                    class="w-[180px] h-[150px] mb-1 absolute top-72 right-8 opacity-25 rotate-[190deg]" />
+
+                <div class="grid lg:grid-cols-2 items-center">
+                    <div>
+                        <h2 class="text-[60px] leading-[60px] xl:text-[90px] xl:leading-[90px] paytone mb-8">Buy
+                            <br />Now @</h2>
+                    </div>
+                    <div class="flex gap-8 z-10 mt-8 lg:mt-0">
+                        <a href="https://www.amazon.in" target="_blank"
+                            class="bg-white rounded-lg shadow-xl inline-flex py-8 px-10 border border-[#f3f3f3] h-[120px] ">
+                            <img src="wp-content/themes/quality/assets/images/Amazon_logo.svg"
+                                class="w-[150px] object-contain" />
+                        </a>
+                        <a href="https://www.flipkart.com" target="_blank"
+                            class="bg-white rounded-lg shadow-xl inline-flex py-8 px-10 border border-[#f3f3f3] h-[120px]">
+                            <img src="wp-content/themes/quality/assets/images/Flipkart_Logo.png"
+                                class="w-[150px] object-contain" />
+                        </a>
+                    </div>
+                </div>
+				
+
+                <img src="wp-content/themes/quality/assets/images/pistachio-vector.svg"
+                    class="w-[157px] h-[160px] mb-1 absolute -top-16 right-12 opacity-25 rotate-[150deg]" />
+            </div>
+
+
+
+            <div class="marquee-wrapper page-width" style="padding:0">
+                <div class="">
+                    <div class="marquee-block">
+                        <div class="marquee-inner to-left">
+                            <span>
+                                <div class="marquee-content">
+                                    <p>indulge in the crunch, fall in love with the flavor</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>a perfect blend of crunch and taste in every bite</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>experience the irresistible crunch, savor the delightful flavors</p>
+                                </div>
+                            </span>
+                            <span>
+                                <div class="marquee-content">
+                                    <p>indulge in the crunch, fall in love with the flavor</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>a perfect blend of crunch and taste in every bite</p>
+                                </div>
+                                <div class="marquee-content">
+
+                                    <p>experience the irresistible crunch, savor the delightful flavors</p>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-[#41A971] w-full">
+                <div class="container py-16">
+                    <div class="pb-10 border-b border-white" >
+						<img style="max-width:10%;border-radius:51%" src="assets/logo-white.png" alt="Quality Logo">
+                    </div>
+                    <div class="grid lg:grid-cols-4 gap-8 text-white mt-8 rubik font-medium">
+                        <div class="">
+                            <div class="text-[20px] leading-[26px] mb-4">
+                                <h3>SHOP</h3>
+                            </div>
+                            <div class="">
+                                <ul class="flex flex-col gap-2">
+                                    <li>
+                                        <a href="#">Cashews</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Almonds</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Almond dates</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="text-[20px] leading-[26px] mb-4">
+                                <h3>Company</h3>
+                            </div>
+                            <div class="">
+                                <ul class="flex flex-col gap-2">
+                                    <li>
+                                        <a href="#">Our Story</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://wa.me/916282885541">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="text-[20px] leading-[26px] mb-4">
+                                <h3>Contact Us</h3>
+                            </div>
+                            <div class="font-normal">
+                                <ul class="flex flex-col gap-4">
+                                    <li>
+                                        <p>PH: <a href="tel:+91 6282885541">+91 6282885541</a></p>
+                                    </li>
+                                    <li>
+                                        <p>WE ARE AVAILABLE MONDAY TO <br />SATURDAY; 10 AM - 6:00 PM.</p>
+                                    </li>
+                                    <li>
+                                        <p>Email us at : <a
+                                                href="mailto:qualitydatesandnuts@gmail.com">qualitydatesandnuts@gmail.com</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="text-[20px] leading-[26px] mb-4">
+                                <h3>Follow Us</h3>
+                            </div>
+                            <div class="font-normal">
+                                <ul class="flex flex-col gap-5">
+                                    <li>
+                                        <div class="flex gap-5 items-center">
+                                           <div class="footer-icons">
+          <a href="https://www.instagram.com/quality_datesandnuts?igsh=bDg5anc1N3h4Y3Vl" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/15yfcAxfHh/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/916282885541" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+                                          
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col lg:flex-row justify-between text-white pt-5 mt-10 border-t border-white lg:items-center">
+                        <div class="">
+                            <ul class="flex gap-4">
+                                <li>
+                                    <a href="#">Terms & Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="privacy-policy/index.html">Privacy Policy</a>
+                                </li>
+                            </ul>
+                            <p class="text-xs font-light mt-4 xl:w-1/2">Disclaimer: The information provided on this website is for general informational purposes only. While we strive to ensure accuracy, completeness, and timeliness, we make no representations or warranties of any kind, express or implied, regarding the reliability or accuracy of the content. This material should not be considered as the sole basis for making decisions without consulting primary, more accurate, or more current sources of information. Any reliance you place on the content of this website is strictly at your own risk.</p>
+                        </div>
+					
+                        <div class="">
+                            <h4 class="paytone text-[36px]">Quality Snacks, Better Bites!!</h4>
+                        </div>
+                    </div>
+					
+                </div>
+
+            </footer>
+			
+			<script>
+  const whatsappNumber = '916282885541'; 
+
+  function redirectToWhatsApp(productName) {
+    const message = `I'm interested in buying ${productName}`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+            <script data-minify="1" src="wp-content/cache/min/1/npm/swiper%4011/swiper-element-bundle.min3ca2.js?ver=1737611819"></script>
+    
+            <hr />
+    </div>
+
+
+
+    
+<script data-name="wpr-lcp-beacon" src='wp-content/plugins/wp-rocket/assets/js/lcp-beacon.min.js' async></script>
 </body>
+
 </html>
