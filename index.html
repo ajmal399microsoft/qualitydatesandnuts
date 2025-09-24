@@ -84,7 +84,9 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+html {
+  scroll-behavior: smooth;
+}
     body {
       font-family: var(--font);
       background-color: var(--light);
@@ -582,7 +584,7 @@
                 </div>
             </div>
 
-            <div class="container pb-16">
+            <div id="products" class="container pb-16">
                 <div class="grid lg:grid-cols-4 gap-8">
                     <div class="product relative">
                         <div
